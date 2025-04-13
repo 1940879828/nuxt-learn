@@ -17,10 +17,13 @@
       </template>
     </AppInput>
     <el-button @click="focusInput">聚焦输入框</el-button>
-    <div v-if="status==='pending'">
-      loading......
-    </div>
-    <el-button @click="()=>refresh">重新获取</el-button>
+<!--    <div v-if="status==='pending'">-->
+<!--      loading......-->
+<!--    </div>-->
+<!--    <el-button @click="()=>refresh">重新获取</el-button>-->
+    <el-button @click="counterStore.increment()">增加counter</el-button>
+    <p>count:{{counterStore.count}}</p>
+    {{data.afas}}
   </div>
   <hr>
   <h3>todo</h3>
@@ -30,7 +33,8 @@
 <script setup lang="ts">
 import AppInput from "~/components/AppInput.vue";
 import type {ElInput} from "element-plus/es/components/input";
-
+import {useCounterStore} from "~/composables/userStore";
+const counterStore = useCounterStore()
 const text = ref('')
 const data = ref({})
 

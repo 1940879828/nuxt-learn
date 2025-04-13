@@ -14,7 +14,9 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt'
   ],
   $development:{
     runtimeConfig:{

@@ -2,8 +2,6 @@
 const name = ref("hello")
 console.log("111")
 const config = useRuntimeConfig()
-console.log(config.count)
-console.log(config.public.baseUrl)
 if (import.meta.server) {
   console.log("server...")
 } else {

@@ -14,39 +14,39 @@ export const apiCore = (url, options) => {
       }
     },
     onResponse({response}) {
-      const nuxtApp = useNuxtApp()
-      if (response.status>=200 && response.status < 300) {
-        if (response._data.code !== 200) {
-          if (import.meta.client) {
-            ElMessage.error(response._data.code+""+response._data.message)
-            nuxtApp.runWithContext(()=>{
-              navigateTo({
-                path: "/myError",
-                query: {
-                  code: response._data.code,
-                  message: response._data.message,
-                }
-              })
-            })
-          }
-        }
-      }
+      // const nuxtApp = useNuxtApp()
+      // if (response.status>=200 && response.status < 300) {
+      //   if (response._data.code !== 200) {
+      //     if (import.meta.client) {
+      //       ElMessage.error(response._data.code+""+response._data.message)
+      //       nuxtApp.runWithContext(()=>{
+      //         navigateTo({
+      //           path: "/myError",
+      //           query: {
+      //             code: response._data.code,
+      //             message: response._data.message,
+      //           }
+      //         })
+      //       })
+      //     }
+      //   }
+      // }
     },
     onRequestError({response}){
-      const nuxtApp = useNuxtApp()
-      if (import.meta.client ) {
-        ElMessage.error(response._data.code+""+response._data.message)
-      } else {
-        nuxtApp.runWithContext(()=>{
-          navigateTo({
-            path: "/myError",
-            query: {
-              code: response._data.code,
-              message: response._data.message,
-            }
-          })
-        })
-      }
+      // const nuxtApp = useNuxtApp()
+      // if (import.meta.client ) {
+      //   ElMessage.error(response._data.code+""+response._data.message)
+      // } else {
+      //   nuxtApp.runWithContext(()=>{
+      //     navigateTo({
+      //       path: "/myError",
+      //       query: {
+      //         code: response._data.code,
+      //         message: response._data.message,
+      //       }
+      //     })
+      //   })
+      // }
     },
     ...options
   })
