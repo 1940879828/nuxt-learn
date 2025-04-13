@@ -6,3 +6,9 @@
     </AppAlert>
   </div>
 </template>
+
+<script lang="ts">
+definePageMeta({
+  middleware: ["my"]
+})
+</script>

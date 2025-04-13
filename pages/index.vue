@@ -33,4 +33,6 @@ const focusInput = () => {
   console.log(appInputRef.value?.inputRef)
   appInputRef.value?.inputRef?.focus()
 }
+
+navigateTo("/login")
 </script>
