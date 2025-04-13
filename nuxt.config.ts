@@ -20,6 +20,14 @@ export default defineNuxtConfig({
     runtimeConfig:{
       public:{
         // 服务端和客户端都能获取到
+        baseUrl: 'https://jsonplaceholder.typicode.com',
+      }
+    }
+  },
+  $production:{
+    runtimeConfig:{
+      public:{
+        // 服务端和客户端都能获取到
         baseUrl: 'http://127.0.0.1:8000/',
       }
     }
